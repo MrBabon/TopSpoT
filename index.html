@@ -29,7 +29,7 @@
             | NAVBAR |
              ------->
             <header class="w-full bg-gray-100">
-                <nav class="py-4 px-5 w-full grid grid-col-none bg-gray-100">
+                <nav class="py-5 px-5 w-full grid grid-col-none bg-gray-100">
                     <div class="flex justify-between items-center">
                         <a href="">
                             <img src="assets/images/Logo.png" alt="Logo TopSpoT" class="w-9">
@@ -96,13 +96,13 @@
                     </div>
                 </div>
                 <div class="h-full w-full overflow-hidden lg:order-1 lg:w-1/2">
-                    <div class="lg:overflow-hidden lg:w-96 lg:rounded-2xl">
-                        <img src="https://res.cloudinary.com/dilp6xqmb/image/upload/v1701768623/Contact.jpg" alt="" class="lg:w-96 lg:rounded-2xl lg:scale-125 lg:transition-all lg:ease-in-out lg:duration-100 lg:group-hover:scale-100" >
+                    <div class="lg:overflow-hidden lg:w-[450px] lg:rounded-2xl">
+                        <img src="https://res.cloudinary.com/dilp6xqmb/image/upload/v1701768623/Contact.jpg" alt="" class="lg:w-[450px] lg:rounded-2xl lg:scale-125 lg:transition-all lg:ease-in-out lg:duration-100 lg:group-hover:scale-100" >
                     </div>
                 </div>
             </section>
-            <div class="border-t rounded-lg border-Topspot-purple w-56 mx-auto my-8"></div>
-            <section class="px-8">
+            <div class="border-t rounded-lg border-Topspot-purple w-56 mx-auto mt-8"></div>
+            <!-- <section class="px-8">
                 <div>
                     <h1 class="text-Topspot-blue  font-black text-3xl uppercase">Key info<br> at your fingertips.</h1>
                 </div>
@@ -121,15 +121,120 @@
                         </div>
                     </div>
                 </div>
+            </section> -->
+            <!-- CONTACT FORM -->
+            <section id="contact" class="my-3 mx-3 sm:mx-4 lg:mx-20 xl:mx-40 2xl:mx-60">
+                <h5 class="text-center font-extrabold text-Topspot-blue">Contact us</h5>
+                <h1 class="my-3 font-bold text-Topspot-black text-4xl">Get in touch</h1>
+                <p class=" text-Topspot-black ">We’d love to hear from you. Please get in touch using the form opposite and we’ll be right back to answer your query.</p>
+                <div class="relative flex flex-col items-center lg:flex-row">
+                    <div class="order-1 lg:order-2 lg:w-1/2">
+                        <div class="flex flex-col mt-5 mx-3 sm:flex-row sm:mx-20 sm:justify-between md:mx-14 lg:mx-5 lg:flex-col">
+                            <div class="mb-3 md:mx-4">
+                                <div class="flex items-center mb-2 space-x-1">
+                                    <img src="assets/images/icon/geo-fill.svg" alt="Geo" class="w-5">
+                                    <h4 class="text-2xl text-Topspot-purple font-semibold ">Address</h4>
+                                </div>
+                                <ul class="text-Topspot-black space-y-1">
+                                    <li class="font-semibold text-Topspot-blue text-lg">TopSpoT</li>
+                                    <li>61,avenve de la Liberation</li>
+                                    <li>06130 - Grasse</li>
+                                    <li>France</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="text-2xl text-Topspot-purple font-semibold mb-2">Contact</h4>
+                                <div class="flex space-x-3">
+                                    <img src="assets/images/icon/telephone-fill.svg" alt="Phone" class="w-5">
+                                    <p><a href="tel:+33649581340">+33(0)6.49.58.13.40</a></p>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <img src="assets/images/icon/envelope-at-fill.svg" alt="Envelope" class="w-5">
+                                    <p><a href="mailto:info@topspot.com">info@topspot.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-2 lg:order-1 lg:w-1/2">
+                        <form name="Topspot" onsubmit="return validateForm()" id="contact-form" class="border border-Topspot-blue rounded mt-5 mx-1 py-4 bg-Topspot-black lg:mx-0 lg:mr-3" method="post" action="" role="form">
+                            <div class="grid grid-cols-4 gap-x-3 mx-4">
+                                <div class="col-span-4 sm:col-span-2">
+                                    <label for="firstname" class="text-gray-50">First Name <span class="text-red-700">*</span></label>
+                                    <input id="firstname" name="firstname" type="text" autocomplete="off" class=" bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-flashDanna transition ease-in-out duration-150 w-full" placeholder="Your first name" required>
+                                </div>
+                                <div class="col-span-4 sm:col-span-2">
+                                    <label for="lastname" class="text-gray-50">Last Name <span class="text-red-700">*</span></label>
+                                    <input id="lastname" name="lastname" type="text" autocomplete="off" class=" bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-flashDanna focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-flashDanna transition ease-in-out duration-150 w-full" placeholder="Your last name" required>
+                                </div>
+                                <div class="col-span-4 sm:col-span-2">
+                                    <label for="email" class="text-gray-50">Email <span class="text-red-700">*</span></label>
+                                    <input id="email" name="email" autocomplete="off" type="email" class=" bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-flashDanna focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-flashDanna transition ease-in-out duration-150 w-full" placeholder="Your email" required>
+                                </div>
+                                <div class="col-span-4 sm:col-span-2">
+                                    <label for="company" class="text-gray-50">company Name <span class="text-red-700">*</span></label>
+                                    <input id="company" name="company" type="text" autocomplete="off" class="col-span-2  bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-flashDanna focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-flashDanna transition ease-in-out duration-150 w-full" placeholder="Your company name" required>
+                                </div>
+                                <div class="col-span-4">
+                                    <label for="message" class="text-gray-50">Message <span class="text-red-700">*</span></label>
+                                    <textarea id="message" name="message" rows="2" cols="50" class="bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-flashDanna focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-flashDanna transition ease-in-out duration-150 w-full" placeholder="Your message..." required></textarea>
+                                </div>
+                                <div class="col-span-4">
+                                    <input required class="form-check-input accent-Topspot-blue" type="checkbox" value="accepted" name="checkbox" id="flexCheckIndeterminate">
+                                    <label for="flexCheckIndeterminate" class="text-gray-200 font-extralight text-sm"><span class="text-red-700">*</span>You agree to our friendly <a href="#" class="text-flashDanna underline transition-all ease-in-out duration -150 hover:text-fontDanna">privacy policy</a>. </label>
+                                </div>
+                                <div class="bg-white w-40 h-10 flex items-center flex-col-reverse mt-5 ">
+                                    <input class="cursor-pointer flex justify-center items-center py-2 px-8 w-40 h-10 text-lg text-Topspot-black bg-Topspot-gray transition-all ease-in-out duration-75 hover:translate-x-1 hover:-translate-y-1 md:mt-10 md:text-xl" type="submit" value="Send">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </section>
-            <section id="contact"></section>
-            <footer class="mt-auto bg-gray-100 border-y border-Topspot-blue/45">
-                <div class="w-auto">
-                    <a href="">
-                        <img src="assets/images/Logo.png" alt="Logo TopSpoT" class="w-9">
-                    </a>
+            <footer class="mt-auto bg-gray-100 border-b border-Topspot-blue/45">
+                <div class="flex flex-col sm:items-center justify-between">
+                    <div class="w-auto py-4 px-5">
+                        <a href="">
+                            <img src="assets/images/Logo.png" alt="Logo TopSpoT" class="w-28">
+                        </a>
+                    </div>
+                    <div class="p-8 space-y-5">
+                        <div class="flex space-x-2">
+                            <img src="assets/images/icon/telephone-fill.svg" alt="Phone" class="w-6">
+                            <p><a href="tel:+33649581340">+33(0)6.49.58.13.40</a></p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <img src="assets/images/icon/envelope-at-fill.svg" alt="Envelope" class="w-6">
+                            <p><a href="mailto:info@topspot.com">info@topspot.com</a></p>
+                        </div>
+                        <div class="flex space-x-2 items-start">
+                            <div>
+                                <img src="assets/images/icon/geo-fill.svg" alt="Geo" class="min-w-6 w-6 mt-1">
+                            </div>
+                            <p class="text-sm">TopSpoT, 61,avenue de la Liberation, 06130 - Grasse, France.</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h2 class="font-semibold text-xl text-Topspot-mauve">Quick access</h2>
+                        <ul class="space-y-1 text-lg">
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                            <li>
+                                <a href="">Presentation</a>
+                            </li>
+                            <li>
+                                <a href="">Contact us</a>
+                            </li>
+                            <li>
+                                <a href="">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
+            <div class="py-4 w-full text-center">
+                <p class=" text-xs text-Topspot-black sm:text-base">&nbsp;Copyright&nbsp;&copy;&nbsp;<span class="text-gray-600">TopSpoT</span> <script>document.write(new Date().getFullYear())</script>. All rights reserved. Made with 💜 by <a href="https://www.dannacode.com" class="text-Topspot-purple" target="_blank" rel="noopener">DannaCode</a>  - <a href="legal-notice/" class="text-Topspot-blue transition duration-100 ease-in-out hover:text-Topspot-black">Privacy</a></p>
+            </div>
         </div>
     </body>
 </html>
