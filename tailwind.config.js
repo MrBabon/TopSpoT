@@ -13,8 +13,11 @@ module.exports = {
         'Topspot-gray': '#637095',
         'Topspot-blue': '#5271FF',
       },
+      backgroundColor: {
+        'rgba': 'rgba(5, 26, 36, 0.8)',
+      },
       backgroundImage: {
-        'banner-home': "url('https://res.cloudinary.com/dilp6xqmb/image/upload/v1701768624/Banner_home.jpg')",
+        'banner-home': "linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15)),url('../../assets/images/photos/iStock-1216520737.jpg')",
       },
     },
   },
