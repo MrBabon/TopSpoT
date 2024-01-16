@@ -2480,6 +2480,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(34 38 33 / var(--tw-text-opacity));
 }
+.hover\:text-Topspot-gray:hover {
+  --tw-text-opacity: 1;
+  color: rgb(99 112 149 / var(--tw-text-opacity));
+}
 .before\:hover\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
