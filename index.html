@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </section>
-            <section id="partner" class="">
+            <!-- <section id="partner" class="">
                 <div class="px-3 pb-8">
                     <p class="text-center text-sm text-Topspot-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa</p>
                 </div>
@@ -62,7 +62,7 @@
                     <img src="assets/images/ruby.png" alt="" class="w-10">
                     <img src="assets/images/ruby.png" alt="" class="w-10">
                 </div>
-            </section>
+            </section> -->
             <div class="w-40 mx-auto mb-10"></div>
             <!-- PRESENTATION ARTICLES -->
             <section id="presentation" class="group flex flex-col md:mx-auto lg:flex-row lg:items-center lg:mx-auto xl:w-[1400px]">
@@ -257,6 +257,12 @@
                     </div>
                 </div>
             </footer>
+            <a href="" id="scrollButton" class="text-3xl">
+                <span id="scrollIcon" class="transition-top h-11 w-11 bg-gradient-to-tr from-Topspot-blue to-Topspot-mauve rounded-full hidden sm:flex justify-center items-center fixed right-12 bottom-8 border-2 border-Topspot-black z-50 opacity-0 transition-all duration-300 ease-in-out transition-scale hover:scale-105 hover:border-Topspot-purple">
+                    <img src="./assets/images/icon/arrow-down-short.svg" alt="chevron-up" class="w-8 rotate-180">
+                </span>
+            </a>
+            <!-- LOADER -->
             <div class="fixed w-full h-full bg-rgba hidden justify-center items-center flex-row gap-2 z-50 top-0 left-0" id="loader">
                 <div class="w-5 h-5 rounded-full bg-Topspot-purple animate-bounce"></div>
                 <div class="w-5 h-5 rounded-full bg-Topspot-blue animate-bounce [animation-delay:-.3s]"></div>
@@ -266,7 +272,7 @@
                 <p class=" text-xs text-Topspot-black sm:text-base">&nbsp;Copyright&nbsp;&copy;&nbsp;<span class="text-gray-600">TopSpoT</span> <script>document.write(new Date().getFullYear())</script>. All rights reserved. Made with 💜 by <a href="https://www.dannacode.com" class="text-Topspot-purple" target="_blank" rel="noopener">DannaCode</a>  - <a href="privacy/" class="text-Topspot-blue transition duration-100 ease-in-out hover:text-Topspot-black">Privacy</a></p>
             </div>
         </div>
-        <script type="module" src="assets/js/script.js"></script>
+        <script type="module" src="assets/js/script.js" defer></script>
         <script defer src="assets/js/contact.js"></script>
 
     </body>
