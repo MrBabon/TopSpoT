@@ -1,26 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
+
+        
+        // Valider le formulaire avant d'envoyer
+        if (!validateForm()) {
+            return;
+        }
+
         var postdata = new FormData(this);
         
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '../php/contact.php', true);
+        xhr.open('POST', '/php/contact.php', true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
-                console.log(xhr.responseText);
                 if (xhr.status == 200) {
-                    var result = JSON.parse(xhr.responseText);
-                    handleFormResponse(result);
+                    try {
+                        var result = JSON.parse(xhr.responseText);
+                        handleFormResponse(result);
+                    } catch (e) {
+                        console.error("Could not parse JSON response: " + e.message);
+                    }
+                } else {
+                    console.error("Erreur de requête : " + xhr.status);
                 }
             }
         };
         xhr.send(postdata);
     });
 });
-function validateForm()                                    
-{              
+function validateForm() {              
     var email = document.forms["Topspot"]["email"];    
-    var phone = document.forms["Topspot"]["phone"];  
     var company =  document.forms["Topspot"]["company"];  
     var message =  document.forms["Topspot"]["message"];  
   
@@ -30,19 +40,19 @@ function validateForm()
         return emailRegex.test(email);
     }
     if (!isValidEmail(email.value)) {
-        alert("Mettez une adresse email valide.");
+        alert("Enter a valid email address.");
         email.focus();
         return false;
     } 
     if (company.value == "")                  
     { 
-        alert("Mettez votre entreprise."); 
+        alert("Put on your company."); 
         company.focus(); 
         return false; 
     } 
     if (message.value == "")                  
     { 
-        alert("Écrivez un commentaire."); 
+        alert("Write a comment."); 
         message.focus(); 
         return false; 
     } 

@@ -47,7 +47,7 @@
                         <h5 class="font-black text-white text-xl">Independent International IT Distributor</h5>
                         <p class="mb-3 text-sm font-semibold text-white sm:text-base lg:text-xl">Based in Grasse, on the French Riviera, we hold in our warehouse IT stock ready to ship worldwide and we have an impressive network of suppliers who allow us to deliver difficult parts to source.</p>
                         <div class="bg-Topspot-gray px-4 py-2 rounded-lg font-medium text-gray-100">
-                            <a href="">Contact us</a>
+                            <a href="#contact">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <li><span class="text-Topspot-black">Networking (Switches, Industrial switches, Routers, Firewalls)</span></li>
                         <li><span class="text-Topspot-black">Servers and options.</span></li>
                         <li><span class="text-Topspot-black">Storage.</span></li>
-                        <li><span class="text-Topspot-black">Main brands: Cisco, HPE/Aruba, Jupiter.</span></li>
+                        <li><span class="text-Topspot-black">Main brands: Cisco, HPE/Aruba, Juniper.</span></li>
                         <li><span class="text-Topspot-black">We sell new factory sealed products with full manufacturer warranty.</span></li>
                     </ul>
                     <div class="bg-Topspot-gray px-4 py-2 rounded-3xl font-medium outline outline-2 outline-offset-0 outline-Topspot-black shadow-lg shadow-Topspot-gray text-gray-100 w-48 my-6">
@@ -167,22 +167,27 @@
                                 <div class="col-span-4 sm:col-span-2">
                                     <label for="firstname" class="text-gray-50">First Name <span class="text-red-700">*</span></label>
                                     <input id="firstname" name="firstname" type="text" autocomplete="off" class="bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-Topspot-mauve transition ease-in-out duration-150 w-full" placeholder="Your first name" required>
+                                    <div id="firstnameError" class="error-message text-red-700"></div>
                                 </div>
                                 <div class="col-span-4 sm:col-span-2">
                                     <label for="lastname" class="text-gray-50">Last Name <span class="text-red-700">*</span></label>
                                     <input id="lastname" name="lastname" type="text" autocomplete="off" class=" bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-Topspot-mauve transition ease-in-out duration-150 w-full" placeholder="Your last name" required>
+                                    <div id="lastnameError" class="error-message text-red-700"></div>
                                 </div>
                                 <div class="col-span-4 sm:col-span-2">
                                     <label for="email" class="text-gray-50">Email <span class="text-red-700">*</span></label>
                                     <input id="email" name="email" autocomplete="off" type="email" class=" bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Tring-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-Topspot-mauve transition ease-in-out duration-150 w-full" placeholder="Your email" required>
+                                    <div id="emailError" class="error-message text-red-700"></div>
                                 </div>
                                 <div class="col-span-4 sm:col-span-2">
                                     <label for="company" class="text-gray-50">company Name <span class="text-red-700">*</span></label>
                                     <input id="company" name="company" type="text" autocomplete="off" class="col-span-2  bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-Topspot-mauve transition ease-in-out duration-150 w-full" placeholder="Your company name" required>
+                                    <div id="companyError" class="error-message text-red-700"></div>
                                 </div>
                                 <div class="col-span-4">
                                     <label for="message" class="text-gray-50">Message <span class="text-red-700">*</span></label>
                                     <textarea id="message" name="message" rows="2" cols="50" class="bg-gray-700 text-gray-200 ring-1 ring-slate-900/10 shadow-sm rounded-md p-2 mb-4 caret-Tring-Topspot-mauve focus:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-Topspot-mauve transition ease-in-out duration-150 w-full" placeholder="Your message..." required></textarea>
+                                    <div id="messageError" class="error-message text-red-700"></div>
                                 </div>
                                 <div class="col-span-4">
                                     <input required class="form-check-input accent-Topspot-blue" type="checkbox" value="accepted" name="checkbox" id="flexCheckIndeterminate">
@@ -196,17 +201,18 @@
                     </div>
                 </div>
             </section>
+            <!-- OVERLAY -->
             <section>
                 <div class="hidden fixed top-0 left-0 w-full h-full bg-rgba justify-center items-center text-white z-50" id="overlay">
-                    <div class="relative w-72 h-56 bg-gradient-to-r from-bodyDanna from-30% to-navDanna py-5 px-4 text-center rounded border hidden content-between sm:w-80 md:w-96" id="modal">
+                    <div class="relative w-72 h-56 bg-gradient-to-r from-Topspot-blue to-Topspot-mauve py-5 px-4 text-center rounded  hidden content-between sm:w-80 md:w-96" id="modal">
                         <div class="flex justify-center">
-                            <img src="../assets/images/icon/check-circle-fill.svg" alt="check" class="w-7">
+                            <img src="assets/images/icon/check-circle-fill.svg" alt="check" class="w-7">
                         </div>
                         <div class="">
-                            <p class="text-sm md:text-base">Nous vous remercions pour votre message. Votre demande est en cours de traitement et sera traitée dans les meilleurs délais.</p>
+                            <p class="text-sm md:text-base">Thank you for your message. Your request is being processed and will be dealt with as soon as possible.</p>
                         </div>
-                        <div class="py-3 px-5 bg-fontDanna text-gray-100 font-medium rounded transition-all duration-150 ease-in-out hover:text-white hover:scale-105 sm:place-self-center">
-                            <a href="" onclick="closeModal()">Retour à l'accueil</a>
+                        <div class="py-3 px-5 bg-Topspot-purple text-gray-100 font-medium rounded transition-all duration-150 ease-in-out hover:text-white hover:scale-105 sm:place-self-center">
+                            <a href="" onclick="closeModal()">Back to home page</a>
                         </div>
                     </div>
                 </div>

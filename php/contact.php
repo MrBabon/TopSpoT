@@ -1,6 +1,14 @@
 <?php
 header('Content-Type: application/json');
 
+function isEmail($var) {
+    return filter_var($var, FILTER_VALIDATE_EMAIL);
+}
+
+function verifyInput($var) {
+    return htmlspecialchars(stripslashes(trim($var)));
+}
+
 $array = array(
     "firstname" => isset($_POST["firstname"]) ? verifyInput($_POST["firstname"]) : "",
     "lastname" => isset($_POST["lastname"]) ? verifyInput($_POST["lastname"]) : "",
@@ -10,46 +18,45 @@ $array = array(
     "firstnameError" => "",
     "lastnameError" => "",
     "emailError" => "",
+    "companyError" => "",
     "messageError" => "",
-    "isSuccess" => true
+    "isSuccess" => true,
+    "errorMessage" => "",
+    "successMessage" => ""
 );
 
-$emailTo = "info@topspot.com";
+$emailTo = "christophedanna06@gmail.com";
 $emailText = "";
-$fields = array("firstname", "lastname", "email", "message");
+$fields = array("firstname", "lastname", "email", "company", "message");
+
 foreach ($fields as $field) {
     if (empty($array[$field])) {
-        $array[$field . "Error"] = "Le champ $field est obligatoire";
+        $array[$field . "Error"] = "The $field field is mandatory";
         $array["isSuccess"] = false;
     } else {
         $emailText .= ucfirst($field) . ": {$array[$field]}\n";
     }
 }
 
+if (!isEmail($array["email"])) {
+    $array["emailError"] = "Invalid email";
+    $array["isSuccess"] = false;
+}
+
 if ($array["isSuccess"]) {
-    $headers = "From: {$array["firstname"]} {$array["lastname"]} <{$array["email"]}>\r\nReply-To: {$array["email"]}\r\nX-Originating-IP: {$_SERVER['REMOTE_ADDR']}";
+    $headers = "From: {$array["firstname"]} {$array["lastname"]} <{$array["email"]}>\r\n";
+    $headers .= "Reply-To: {$array["email"]}\r\n";
+    $headers .= "X-Originating-IP: {$_SERVER['REMOTE_ADDR']}\r\n";
 
-    $formattedDate = date("d/m/Y", strtotime($array["date"]));
-
-    $emailText = "Entreprise: {$array["company"]}\n";
-    $emailText .= "Nom: {$array["lastname"]}\n";
-    $emailText .= "Prénom: {$array["firstname"]}\n";
-    $emailText .= "Email: {$array["email"]}\n";
-    $emailText .= "Message du client: {$array["message"]}\n";
-
-    mail($emailTo, "Un message de votre site www.dannacode.com", $emailText, $headers);
+    if (mail($emailTo, "Un message de votre site www.topspot.com", $emailText, $headers)) {
+        $array["successMessage"] = 'Email sent successfully.';
+    } else {
+        $array["isSuccess"] = false;
+        $array["errorMessage"] = 'Failed to send email.';
+    }
+} else {
+    $array["errorMessage"] = 'Validation errors occurred.';
 }
 
 echo json_encode($array);
-
-
-function isEmail($var)
-{
-    return filter_var($var, FILTER_VALIDATE_EMAIL);
-}
-
-function verifyInput($var)
-{
-    return htmlspecialchars(stripslashes(trim($var)));
-}
 ?>
