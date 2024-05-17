@@ -25,7 +25,7 @@ $array = array(
     "successMessage" => ""
 );
 
-$emailTo = "christophedanna06@gmail.com";
+$emailTo = "info@topspot.fr";
 $emailText = "";
 $fields = array("firstname", "lastname", "email", "company", "message");
 
